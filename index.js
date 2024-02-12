@@ -1,4 +1,4 @@
-const { describe, it } = require("node:test");
+const { afterEach, beforeEach, describe, it } = require("node:test");
 
 function Feature(text, testFn) {
   return describe(`Feature: ${text}`, testFn);
@@ -28,6 +28,15 @@ function But(text, testFn) {
   return it(`But ${text}`, testFn);
 }
 
+
+function afterEachScenario(hookFn) {
+  return afterEach(hookFn)
+}
+
+function beforeEachScenario(hookFn) {
+  return beforeEach(hookFn)
+}
+
 module.exports = {
   Feature,
   Scenario,
@@ -36,4 +45,6 @@ module.exports = {
   Then,
   And,
   But,
+  afterEachScenario,
+  beforeEachScenario
 };
