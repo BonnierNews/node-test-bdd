@@ -13,10 +13,10 @@ Feature("a feature", () => {
   })
   after(() => {
     assert.deepStrictEqual(testArr, [
-      "beforeEachScenario in Feature: a feature",
-      "afterEachScenario in Feature: a feature",
-      "beforeEachScenario in Feature: a feature",
-      "afterEachScenario in Feature: a feature"
+      "beforeEachScenario in Scenario: a scenario",
+      "afterEachScenario in Scenario: a scenario",
+      "beforeEachScenario in Scenario: another scenario",
+      "afterEachScenario in Scenario: another scenario",
     ]);
   })
   Scenario("a scenario", () => {
