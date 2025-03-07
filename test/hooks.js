@@ -3,6 +3,16 @@ const { after } = require("node:test");
 
 const { Feature, Scenario, Given, When, Then, And, But, afterEachScenario, beforeEachScenario } = require("../index.js");
 
+let globalBefore = [];
+let globalAfter = [];
+
+beforeEachScenario(() => {
+  globalBefore.push("global beforeEachScenario");
+})
+afterEachScenario(() => {
+  globalAfter.push("global afterEachScenario");
+})
+
 Feature("a feature", () => {
   const testArr = [];
   beforeEachScenario((t) => {
@@ -17,6 +27,14 @@ Feature("a feature", () => {
       "afterEachScenario in Scenario: a scenario",
       "beforeEachScenario in Scenario: another scenario",
       "afterEachScenario in Scenario: another scenario",
+    ]);
+    assert.deepStrictEqual(globalBefore, [
+      "global beforeEachScenario",
+      "global beforeEachScenario",
+    ]);
+    assert.deepStrictEqual(globalAfter, [
+      "global afterEachScenario",
+      "global afterEachScenario",
     ]);
   })
   Scenario("a scenario", () => {
