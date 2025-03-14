@@ -1,26 +1,28 @@
+"use strict";
+
 const assert = require("node:assert");
 const { after } = require("node:test");
 
 const { Feature, Scenario, Given, When, Then, And, But, afterEachScenario, beforeEachScenario } = require("../index.js");
 
-let globalBefore = [];
-let globalAfter = [];
+const globalBefore = [];
+const globalAfter = [];
 
 beforeEachScenario(() => {
   globalBefore.push("global beforeEachScenario");
-})
+});
 afterEachScenario(() => {
   globalAfter.push("global afterEachScenario");
-})
+});
 
 Feature("a feature", () => {
   const testArr = [];
   beforeEachScenario((t) => {
-    testArr.push("beforeEachScenario in " + t.name);
-  })
+    testArr.push(`beforeEachScenario in ${t.name}`);
+  });
   afterEachScenario((t) => {
-    testArr.push("afterEachScenario in " + t.name);
-  })
+    testArr.push(`afterEachScenario in ${t.name}`);
+  });
   after(() => {
     assert.deepStrictEqual(testArr, [
       "beforeEachScenario in Scenario: a scenario",
@@ -36,7 +38,7 @@ Feature("a feature", () => {
       "global afterEachScenario",
       "global afterEachScenario",
     ]);
-  })
+  });
   Scenario("a scenario", () => {
     let a;
     Given("a variable", () => {

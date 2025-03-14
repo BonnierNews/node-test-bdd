@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BonnierNews/node-test-cakes/issues"
   },
-  "homepage": "https://github.com/BonnierNews/node-test-cakes#readme"
+  "homepage": "https://github.com/BonnierNews/node-test-cakes#readme",
+  "devDependencies": {
+    "@bonniernews/eslint-config": "^2.0.2"
+  }
 }

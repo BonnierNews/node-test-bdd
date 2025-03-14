@@ -1,7 +1,9 @@
-const {AsyncLocalStorage, executionAsyncId} = require("node:async_hooks");
+"use strict";
+
+const { AsyncLocalStorage, executionAsyncId } = require("node:async_hooks");
 const { after, before, describe, it } = require("node:test");
 
-const featureStorage = new AsyncLocalStorage
+const featureStorage = new AsyncLocalStorage();
 const globalBeforeEachScenarioHooks = [];
 const globalAfterEachScenarioHooks = [];
 
@@ -12,8 +14,8 @@ function Feature(text, testFn) {
 }
 
 function Scenario(text, testFn) {
-  const beforeHook = featureStorage.getStore().get(executionAsyncId() + "_before");
-  const afterHook = featureStorage.getStore().get(executionAsyncId() + "_after");
+  const beforeHook = featureStorage.getStore().get(`${executionAsyncId()}_before`);
+  const afterHook = featureStorage.getStore().get(`${executionAsyncId()}_after`);
   return describe(`Scenario: ${text}`, () => {
     if (beforeHook) {
       before(beforeHook);
@@ -27,7 +29,7 @@ function Scenario(text, testFn) {
     for (const hook of globalAfterEachScenarioHooks) {
       after(hook);
     }
-    testFn()
+    testFn();
   });
 }
 
@@ -51,10 +53,9 @@ function But(text, testFn) {
   return it(`But ${text}`, testFn);
 }
 
-
 function afterEachScenario(hookFn) {
   if (featureStorage.getStore()) {
-    featureStorage.getStore().set(executionAsyncId() + "_after", hookFn);
+    featureStorage.getStore().set(`${executionAsyncId()}_after`, hookFn);
   } else {
     globalAfterEachScenarioHooks.push(hookFn);
   }
@@ -62,7 +63,7 @@ function afterEachScenario(hookFn) {
 
 function beforeEachScenario(hookFn) {
   if (featureStorage.getStore()) {
-    featureStorage.getStore().set(executionAsyncId() + "_before", hookFn);
+    featureStorage.getStore().set(`${executionAsyncId()}_before`, hookFn);
   } else {
     globalBeforeEachScenarioHooks.push(hookFn);
   }
@@ -77,5 +78,5 @@ module.exports = {
   And,
   But,
   afterEachScenario,
-  beforeEachScenario
+  beforeEachScenario,
 };
