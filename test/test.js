@@ -1,3 +1,5 @@
+"use strict";
+
 const assert = require("node:assert");
 
 const { Feature, Scenario, Given, When, Then, And, But } = require("../index.js");
