@@ -1,22 +1,32 @@
 {
-  "name": "node-test-cakes",
+  "name": "@bonniernews/node-test-bdd",
   "version": "0.0.1",
-  "description": "",
+  "description": "BDD syntax for node test",
   "main": "index.js",
   "scripts": {
     "test": "node --test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BonnierNews/node-test-cakes.git"
+    "url": "git+https://github.com/BonnierNews/node-test-bdd.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Bonnier News",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BonnierNews/node-test-cakes/issues"
+    "url": "https://github.com/BonnierNews/node-test-bdd/issues"
   },
-  "homepage": "https://github.com/BonnierNews/node-test-cakes#readme",
+  "homepage": "https://github.com/BonnierNews/node-test-bdd#readme",
   "devDependencies": {
     "@bonniernews/eslint-config": "^2.0.2"
+  },
+  "files": [
+    "index.js",
+    "register-bdd.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./register-bdd": "./register-bdd.js"
   }
 }
