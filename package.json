@@ -1,6 +1,6 @@
 {
   "name": "@bonniernews/node-test-bdd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BDD syntax for node test",
   "main": "index.js",
   "scripts": {
