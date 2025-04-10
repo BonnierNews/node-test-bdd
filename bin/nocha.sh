@@ -66,10 +66,4 @@ if [[ "$1" == "--help" ]]; then
     usage
 fi
 
-# Check if only one argument is provided and it's a file
-if [ $# -eq 1 ] && [ -f "$1" ]; then
-    echo "Running tests for $1"
-    node --test "$1"
-else
-    node --test "$@"
-fi
+node --test "$@"
