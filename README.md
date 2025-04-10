@@ -145,7 +145,9 @@ This ensures that:
 ### Mocha vs. Node.js Test Runner Options
 
 | Mocha Option | Equivalent in Node.js Test Runner |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------| 
-| [--exit](https://mochajs.org/#-exit)                            | [--test-force-exit](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-force-exit) |
-| [--require](https://mochajs.org/#-require-module-r-module)      | [--import](https://nodejs.org/docs/latest-v22.x/api/cli.html#--importmodule)             |
-| [--timeout](https://mochajs.org/#-timeout-ms-t-ms)              | [--test-timeout](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-timeout)       |
+| ----------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| [--exit](https://mochajs.org/#-exit)                            | [--test-force-exit](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-force-exit)     |
+| [--grep](https://mochajs.org/#-grep-regexp-g-regexp)            | [--test-name-pattern](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-name-pattern) |
+| [--reporter](https://mochajs.org/#-grep-regexp-g-regexp)        | [--test-reporter](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-reporter)         |
+| [--require](https://mochajs.org/#-require-module-r-module)      | [--import](https://nodejs.org/docs/latest-v22.x/api/cli.html#--importmodule)                 |
+| [--timeout](https://mochajs.org/#-timeout-ms-t-ms)              | [--test-timeout](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-timeout)           |
