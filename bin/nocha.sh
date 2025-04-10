@@ -62,7 +62,7 @@ usage() {
 }
 
 # Check if no arguments are provided
-if [ $# -eq 0 ] || [[ "$1" == "--help" ]]; then
+if [[ "$1" == "--help" ]]; then
     usage
 fi
 
