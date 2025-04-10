@@ -6,6 +6,9 @@
   "scripts": {
     "test": "node --test"
   },
+  "bin": {
+    "nocha": "bin/nocha.sh"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BonnierNews/node-test-bdd.git"
