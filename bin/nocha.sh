@@ -61,7 +61,6 @@ usage() {
     exit 1
 }
 
-# Check if no arguments are provided
 if [[ "$1" == "--help" ]]; then
     usage
 fi
