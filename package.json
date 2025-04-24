@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "BDD syntax for node test",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "node --test --test-reporter spec",
     "lint": "eslint . --cache"
@@ -22,6 +23,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "register-bdd.js",
     "LICENSE",
     "README.md"
