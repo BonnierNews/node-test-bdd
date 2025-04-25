@@ -15,7 +15,5 @@ declare let When: NodeTestBDDFunction;
 declare let Then: NodeTestBDDFunction;
 declare let But: NodeTestBDDFunction;
 
-declare let afterEachFeature: NodeTestBDDHook;
-declare let beforeEachFeature: NodeTestBDDHook;
 declare let afterEachScenario: NodeTestBDDHook;
 declare let beforeEachScenario: NodeTestBDDHook;
