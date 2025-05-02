@@ -110,7 +110,7 @@ Node Test BDD provides the following test functions:
     * `And(description, fn)`
     * `But(description, fn)`
 
-## Scenario Hooks
+### Scenario Hooks
 
 You can use hooks to set up and clean up before and after each scenario.
 
@@ -129,6 +129,21 @@ Feature("Some feature", () => {
   });
 
   Scenario("Second scenario", () => {
+    // Test logic...
+  });
+});
+```
+
+### `.skip`
+
+Skips a test clause. Works on all test functions.
+
+```js
+Feature("feature", () => {
+  Scenario.skip("a skipped scenario", () => {
+    // Test logic...
+  });
+  Scenario("scenario", () => {
     // Test logic...
   });
 });
