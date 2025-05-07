@@ -8,6 +8,9 @@
     "test": "node --test --test-reporter spec",
     "lint": "eslint . --cache"
   },
+  "bin": {
+    "nocha": "bin/nocha.sh"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BonnierNews/node-test-bdd.git"
