@@ -7,13 +7,13 @@ interface NodeTestBDDHook {
   (description: string, callback: Function): void;
 }
 
-declare let Feature: NodeTestBDDFunction;
-declare let Scenario: NodeTestBDDFunction;
-declare let Given: NodeTestBDDFunction;
-declare let And: NodeTestBDDFunction;
-declare let When: NodeTestBDDFunction;
-declare let Then: NodeTestBDDFunction;
-declare let But: NodeTestBDDFunction;
+export declare const Feature: NodeTestBDDFunction;
+export declare const Scenario: NodeTestBDDFunction;
+export declare const Given: NodeTestBDDFunction;
+export declare const And: NodeTestBDDFunction;
+export declare const When: NodeTestBDDFunction;
+export declare const Then: NodeTestBDDFunction;
+export declare const But: NodeTestBDDFunction;
 
-declare let afterEachScenario: NodeTestBDDHook;
-declare let beforeEachScenario: NodeTestBDDHook;
+export declare const afterEachScenario: NodeTestBDDHook;
+export declare const beforeEachScenario: NodeTestBDDHook;
